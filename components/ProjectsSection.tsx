@@ -52,14 +52,14 @@ const projects = [
     tech: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
     link: "https://construction-web-application.vercel.app/",
   },
-   {
+  {
     title: "Personal Portfolio",
     description:
       "Animated and responsive developer portfolio featuring sections like skills, experience, education, and contact. Built with App Router and backend contact form.",
     image: "/projects/portfolio.png",
     tech: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Node.js"],
-    link: "https://your-portfolio-url.vercel.app/", 
-  }
+    link: "https://your-portfolio-url.vercel.app/",
+  },
 ];
 
 export default function ProjectSection() {

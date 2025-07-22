@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const educationData = [
   {
-    degree: "Bachelor of Engineering in Computer Science",
+    degree: "Bachelor of Engineering in Information Technology",
     institution: "Vasantdada Patil Pratishthan's College of Engineering and visual arts",
     period: "2021 – 2025",
     score: "7.2 CGPA",

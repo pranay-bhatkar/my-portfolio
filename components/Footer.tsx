@@ -5,6 +5,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaArrowUp } from "react-icons/fa";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import ResumeDownloadButton from "./ResumeDownloadButton";
 
 const socialLinks = [
   {
@@ -143,13 +144,14 @@ export default function Footer() {
 
         {/* Bottom */}
         <motion.div
-          className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4"
+          className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4 "
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.5 }}
           viewport={{ once: true }}
         >
           &copy; {new Date().getFullYear()} Pranay Bhatkar. All rights reserved.
+        <ResumeDownloadButton />
         </motion.div>
       </motion.div>
 
@@ -158,7 +160,7 @@ export default function Footer() {
         <motion.button
           onClick={scrollToTop}
           aria-label="Back to top"
-          className="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg hover:scale-110 transition"
+          className="fixed bottom-20 right-6 bg-primary text-white p-3 rounded-full shadow-lg hover:scale-110 transition"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           whileHover={{ scale: 1.15 }}

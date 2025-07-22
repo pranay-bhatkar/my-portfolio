@@ -1,33 +1,39 @@
-'use client';
-import { motion } from 'framer-motion';
+"use client";
+import { motion } from "framer-motion";
 
 const experiences = [
   {
-    role: 'Full Stack Developer Intern',
-    company: 'Kuvaka Tech',
-    period: 'May 2025 – July 2025',
+    role: "Flint InfoTech Developer Intern",
+    company: "Kuvaka Tech",
+    period: "July 2025 – Present",
     description:
-      'Built real-time store rating web app with React, NestJS, PostgreSQL, and Socket.IO. Created dynamic admin dashboards and interactive charts.',
+      "Building real-time web app with React, NestJS, PostgreSQL, and Socket.IO. creating dynamic admin dashboards and interactive charts and many more.",
+    projects: "Bricon Construction , Spandan Centre",
   },
   {
-    role: 'Freelance Web Developer',
-    company: 'Various Clients',
-    period: 'Jan 2024 – Apr 2025',
+    role: "Freelance Web Developer",
+    company: "Various Clients",
+    period: "Jan 2024 – July 2025",
     description:
-      'Delivered custom eCommerce, portfolio, and medical appointment platforms using MERN stack, Next.js, and TailwindCSS.',
+      "Delivered custom eCommerce, portfolio, and medical appointment platforms using MERN stack, Next.js, and TailwindCSS.",
+    projects: "kissanbazzar",
   },
   {
-    role: 'Open Source Contributor',
-    company: 'Hacktoberfest & GitHub Projects',
-    period: 'Oct 2023 – Present',
+    role: "Open Source Contributor",
+    company: "Hacktoberfest & GitHub Projects",
+    period: "Oct 2023 – Jan 2025",
     description:
-      'Contributed to open-source projects focused on performance, accessibility, and UI improvements across React-based ecosystems.',
+      "Contributed to open-source projects focused on performance, accessibility, and UI improvements across React-based ecosystems.",
+    projects: "GirlScript Summer of Code , Hacktoberfest, Github Projects",
   },
 ];
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="w-full py-20 bg-gray-100 dark:bg-slate-900 text-gray-900 dark:text-white">
+    <section
+      id="experience"
+      className="w-full py-20 bg-gray-100 dark:bg-slate-900 text-gray-900 dark:text-white"
+    >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
           className="text-3xl md:text-4xl font-bold mb-12 text-center"
@@ -54,7 +60,14 @@ export default function ExperienceSection() {
               <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
                 {exp.company} · {exp.period}
               </span>
-              <p className="mt-2 text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{exp.description}</p>
+              <p className="mt-2 text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                {exp.description}
+              </p>
+              <div className="flex items-center gap-4">
+                <p className="mt-2 text-gray-700 dark:text-gray-300 text-sm border-b-2 pb-1 hover:bg-slate-800 rounded-lg shadow-sm p-2 ">
+                  {exp.projects}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>

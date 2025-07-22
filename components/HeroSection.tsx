@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import ResumeDownloadButton from "./ResumeDownloadButton";
 
 export default function HeroSection() {
   return (
@@ -23,6 +24,10 @@ export default function HeroSection() {
         >
           View My Work
         </a>
+        <div>
+          {" "}
+          <ResumeDownloadButton />
+        </div>
       </motion.div>
     </section>
   );
