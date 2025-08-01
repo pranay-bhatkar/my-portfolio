@@ -6,34 +6,36 @@ import { BsStars } from "react-icons/bs";
 const quote =
   "“The future belongs to those who believe in the beauty of their dreams.” – Eleanor Roosevelt";
 
-const typingText = "Portfolio loading...";
+const typingText = " ";
 
 export default function Preloader() {
   const [loading, setLoading] = useState(true);
   const [displayedText, setDisplayedText] = useState("");
 
   useEffect(() => {
-    // Typewriter animation
-    let index = 0;
-    const typingInterval = setInterval(() => {
-      if (index < typingText.length) {
-        setDisplayedText((prev) => prev + typingText.charAt(index));
-        index++;
-      } else {
-        clearInterval(typingInterval);
-      }
-    }, 60); // Typing speed
+  let indexRef = 0;
 
-    // Hide preloader after 3.5 seconds
-    const timeout = setTimeout(() => {
-      setLoading(false);
-    }, 3500);
+  const typingInterval = setInterval(() => {
+    setDisplayedText((prev) => {
+      const nextChar = typingText.charAt(indexRef);
+      indexRef++;
+      return prev + nextChar;
+    });
 
-    return () => {
+    if (indexRef >= typingText.length) {
       clearInterval(typingInterval);
-      clearTimeout(timeout);
-    };
-  }, []);
+    }
+  }, 60);
+
+  const timeout = setTimeout(() => {
+    setLoading(false);
+  }, 3500);
+
+  return () => {
+    clearInterval(typingInterval);
+    clearTimeout(timeout);
+  };
+}, []);
 
   return (
     <AnimatePresence>
