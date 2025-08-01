@@ -65,7 +65,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-gray-100 dark:bg-slate-900 text-gray-700 dark:text-gray-300 pt-12 pb-20 border-t border-gray-200 dark:border-slate-700">
+    <footer className="relative bg-gray-100 dark:bg-slate-900 text-gray-700 dark:text-gray-300 pt-12 pb-20 border-t border-gray-200 dark:border-slate-700"
+    
+    >
       <motion.div
         className="max-w-5xl mx-auto px-4 flex flex-col gap-10"
         initial={{ opacity: 0 }}
@@ -81,14 +83,23 @@ export default function Footer() {
           >
             Pranay Bhatkar
           </Link>
-          <nav className="flex gap-6 text-sm font-medium">
-            <a href="#about" className="hover:text-primary transition">
+          <nav className="flex gap-6 text-md font-medium">
+            <a
+              href="#about"
+              className="hover:text-primary dark:hover:text-white transition"
+            >
               About
             </a>
-            <a href="#projects" className="hover:text-primary transition">
+            <a
+              href="#projects"
+              className="hover:text-primary transition dark:hover:text-white"
+            >
               Projects
             </a>
-            <a href="#contact" className="hover:text-primary transition">
+            <a
+              href="#contact"
+              className="hover:text-primary transition dark:hover:text-white"
+            >
               Contact
             </a>
           </nav>
@@ -99,9 +110,9 @@ export default function Footer() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-primary transition"
+                className="hover:text-primary dark:hover:text-white transition"
                 aria-label={link.label}
-                whileHover={{ scale: 1.2 }}
+                whileHover={{ scale: 1.5 }}
                 whileTap={{ scale: 0.95 }}
               >
                 {link.icon}
@@ -111,7 +122,7 @@ export default function Footer() {
         </div>
 
         {/* Newsletter */}
-        <motion.div
+        {/* <motion.div
           className="flex flex-col sm:flex-row items-center gap-4 justify-between border-t border-gray-300 dark:border-gray-600 pt-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -140,7 +151,7 @@ export default function Footer() {
               Subscribe
             </button>
           </form>
-        </motion.div>
+        </motion.div> */}
 
         {/* Bottom */}
         <motion.div
@@ -151,7 +162,7 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           &copy; {new Date().getFullYear()} Pranay Bhatkar. All rights reserved.
-        <ResumeDownloadButton />
+          {/* <ResumeDownloadButton /> */}
         </motion.div>
       </motion.div>
 
@@ -160,7 +171,7 @@ export default function Footer() {
         <motion.button
           onClick={scrollToTop}
           aria-label="Back to top"
-          className="fixed bottom-20 right-6 bg-primary text-white p-3 rounded-full shadow-lg hover:scale-110 transition"
+          className="fixed bottom-20 right-6  bg-black/20 text-white p-3 rounded-full shadow-lg hover:scale-110 transition"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           whileHover={{ scale: 1.15 }}

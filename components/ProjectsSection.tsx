@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { FiExternalLink } from "react-icons/fi";
 
 const projects = [
   {
@@ -9,7 +10,7 @@ const projects = [
     description:
       "Full-stack e-commerce platform with real-time order tracking, referral system, scheduled delivery, and QR/COD payments.",
     image: "/projects/kissanbazzar.png",
-    tech: ["Next.js", "MongoDB", "Socket.IO", "Stripe"],
+    tech: ["Next.js", "Node.js", "MongoDB", "Socket.IO", "Stripe"],
     link: "https://kissanbazzar.in",
   },
   {
@@ -50,7 +51,7 @@ const projects = [
       "Modern construction company website showcasing services, team, and ongoing projects.",
     image: "/projects/bricon.png",
     tech: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
-    link: "https://construction-web-application.vercel.app/",
+    link: "https://bricon.vercel.app/",
   },
   {
     title: "Personal Portfolio",
@@ -58,7 +59,7 @@ const projects = [
       "Animated and responsive developer portfolio featuring sections like skills, experience, education, and contact. Built with App Router and backend contact form.",
     image: "/projects/portfolio.png",
     tech: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Node.js"],
-    link: "https://your-portfolio-url.vercel.app/",
+    link: "https://pranay-bhatkar-dev.vercel.app/",
   },
 ];
 
@@ -83,7 +84,7 @@ export default function ProjectSection() {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+              className="bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -98,28 +99,36 @@ export default function ProjectSection() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
-              <div className="p-5">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 my-4">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="bg-primary text-white dark:bg-cyan-600 px-2 py-1 text-xs rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              <div className="p-5 flex flex-col flex-grow justify-between">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 my-4">
+                    {project.tech.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="bg-primary text-white dark:bg-cyan-600 px-2 py-1 text-xs rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <Link
-                  href={project.link}
-                  target="_blank"
-                  className="inline-block text-sm font-medium text-primary hover:underline"
-                >
-                  View Project →
-                </Link>
+
+                <div className="mt-4 flex items-center justify-center bg-primary p-1.5 border-2 border-secondary rounded-xl shadow-md hover:border-primary">
+                  <Link
+                    href={project.link}
+                    target="_blank"
+                    className="inline-flex items-center gap-2 text-white px-4 py-2 font-semibold transition-all duration-300"
+                  >
+                    View Project
+                    <FiExternalLink className="w-5 h-5" />
+                  </Link>
+                </div>
               </div>
             </motion.div>
           ))}

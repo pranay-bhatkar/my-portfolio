@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    role: "Flint InfoTech Developer Intern",
-    company: "Kuvaka Tech",
+    role: "Software Developer Intern",
+    company: "Flint InfoTech",
     period: "July 2025 – Present",
     description:
       "Building real-time web app with React, NestJS, PostgreSQL, and Socket.IO. creating dynamic admin dashboards and interactive charts and many more.",
@@ -21,7 +21,7 @@ const experiences = [
   {
     role: "Open Source Contributor",
     company: "Hacktoberfest & GitHub Projects",
-    period: "Oct 2023 – Jan 2025",
+    period: "Oct 2023 – Jan 2024",
     description:
       "Contributed to open-source projects focused on performance, accessibility, and UI improvements across React-based ecosystems.",
     projects: "GirlScript Summer of Code , Hacktoberfest, Github Projects",
