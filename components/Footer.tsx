@@ -1,11 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope, FaArrowUp } from "react-icons/fa";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import ResumeDownloadButton from "./ResumeDownloadButton";
+import { FaArrowUp, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const socialLinks = [
   {
@@ -65,9 +64,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-gray-100 dark:bg-slate-900 text-gray-700 dark:text-gray-300 pt-12 pb-20 border-t border-gray-200 dark:border-slate-700"
-    
-    >
+    <footer className="relative bg-gray-100 dark:bg-slate-900 text-gray-700 dark:text-gray-300 pt-12 pb-20 border-t border-gray-200 dark:border-slate-700">
       <motion.div
         className="max-w-5xl mx-auto px-4 flex flex-col gap-10"
         initial={{ opacity: 0 }}
@@ -90,17 +87,12 @@ export default function Footer() {
             >
               About
             </a>
+
             <a
               href="#projects"
               className="hover:text-primary transition dark:hover:text-white"
             >
               Projects
-            </a>
-            <a
-              href="#contact"
-              className="hover:text-primary transition dark:hover:text-white"
-            >
-              Contact
             </a>
           </nav>
           <div className="flex gap-5 text-xl">

@@ -3,6 +3,7 @@ import { ThemeProvider } from "next-themes";
 import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Preloader from "@/components/Preloader";
 
 export const metadata: Metadata = {
   title: "Pranay | Portfolio",
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="bg-white text-black dark:bg-[#0f0f0f] dark:text-white transition-colors duration-300">
         <ThemeProvider attribute="class" enableSystem={true}>
+          <Preloader />
           {children}
           <WhatsAppButton />
           <Toaster />
